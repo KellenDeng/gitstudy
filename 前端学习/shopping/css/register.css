@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?tomleg');
+    src: url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+        url('../fonts/icomoon.woff?tomleg') format('woff'),
+        url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.style-red {
+
+    color: red;
+}
+
+.start {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    background-color: #f1f1f1;
+
+}
+
+.start1,
+.start2 {
+    padding-top: 6px;
+}
+
+.start2 ul {
+    display: flex;
+}
+
+.start2 ul li {
+    padding: 0 15px;
+    border-right: 1px solid black;
+}
+
+.start2 ul li:last-child {
+    border-right: transparent
+}
+
+.start2 ul li:nth-child(-n+3)::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+    margin-left: 9px;
+}
+
+.logo {
+    position: relative;
+    height: 105px;
+    border-bottom: 2px solid red;
+}
+
+.logo .miaosha {
+    position: absolute;
+    width: 260px;
+    height: 105px;
+    /* background-color: pink; */
+}
+
+.logo .miaosha img {
+    margin-top: 27px;
+}
+
+.logo .miaosha::after {
+    content: '';
+    position: absolute;
+    /* display: inline-block; */
+    right: 1px;
+    top: 40px;
+    height: 28px;
+    width: 70px;
+    border-left: 1px solid red;
+    background: url(../images/sk.png) no-repeat 10px 0px;
+}
+
+.logo .search {
+    position: absolute;
+    left: 348px;
+    top: 26px;
+    width: 540px;
+    height: 38px;
+    border: 2px solid #b2191b;
+
+}
+
+.logo .search .search1 {
+    display: inline-block;
+    width: 455px;
+    height: 100%;
+}
+
+.logo .search .soushuo {
+    height: 100%;
+    background-color: #b2191b;
+    width: 77px;
+    color: white;
+}
+
+.logo .hotwords {
+    position: absolute;
+    top: 63px;
+    left: 348px;
+    width: 500px;
+    height: 35px;
+
+}
+
+.logo .hotwords ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo .hotwords ul li {
+    margin-top: 5px;
+}
+
+.logo .gouwc {
+    position: absolute;
+    top: 30px;
+    left: 1000px;
+    height: 35px;
+    width: 140px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+    line-height: 35px;
+    padding-left: 30px;
+}
+
+.logo .gouwc::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    color: red;
+}
+
+.logo .gouwc::after {
+    content: '8';
+    position: absolute;
+    left: 100px;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    background-color: #de0b1e;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.zhuce {
+    position: relative;
+    height: 525px;
+
+}
+
+.xin {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ececec;
+}
+
+.xin span {
+    margin: 7px 10px;
+    font-size: 20px;
+}
+
+.zhu2 {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+    width: 600px;
+    height: 400px;
+
+}
+
+.zhu2 li span {
+    display: inline-block;
+    height: 50px;
+}
+
+.zhu2 li label {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+
+}
+
+.zhu2 li .zhu3 {
+    height: 40px;
+    width: 242px;
+    border: 1px solid #999999;
+}
+
+.zhu2 .anquan {
+    margin-left: 200px;
+    padding: 10px 0;
+}
+
+.zhu2 .anquan span {
+    display: inline-block;
+    background-color: pink;
+    width: 33px;
+    height: 17px;
+    margin-right: 3px;
+    /* padding-left: 10px; */
+    text-align: center;
+}
+
+.zhu2 .agree {
+    margin-left: 150px;
+
+}
+
+.zhu2 .agree input {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    /* 看css的高级技巧里面有解释这行代码的意思 */
+}
+
+.wancheng {
+    margin-left: 150px;
+    display: inline-block;
+    height: 35px;
+    width: 200px;
+    background-color: #b2191b;
+    color: white;
+    line-height: 35px;
+    font-size: 15px;
+    /* padding-left: 70px; */
+    text-align: center;
+    margin-top: 40px;
+}
+
+.error::before {
+    content: '';
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    background: url(../images/error.png) no-repeat;
+    vertical-align: middle;
+}
+
+.error {
+    color: red;
+}
+
+.cuc::before {
+    content: '';
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    background: url(../images/success.png) no-repeat;
+    vertical-align: middle;
+}
+
+.cuc {
+    color: green;
+}

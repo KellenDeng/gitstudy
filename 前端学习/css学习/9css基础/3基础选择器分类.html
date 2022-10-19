@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            color: blue;
+            font-size: 20px;
+        }
+
+        p {
+            color: brown;
+            font-size: 30px;
+        }
+
+        /* <!-- 标签选择器，标签名作为选择器，优点：会给相同的标签都修改样式。缺点：不能单独给谋一个修改样式。 --> */
+        .red {
+            color: red;
+        }
+
+        .hehe {
+            color: cadetblue;
+        }
+
+        .font20 {
+            font-size: 20px;
+        }
+
+        /* 类选择器，可以单独修改某一行，或者某几行。用class来调用。自定义名字不要使用纯数字，中文，不要用简写。一般有类命名的手册规范。
+   定义为：  .自定义名字（类名）{属性：属性值} */
+
+        /* 多类名：  class后面可以用多个类名，每个类名用空格隔开。 */
+
+        #pink {
+            color: pink;
+        }
+
+        /* id选择器定义为：    #自定义名字（id名） { 属性：属性值; }    id选择器与类选择器的区别在于 id选择器只能调用一次。
+   用了，别人就不能用了。id选择器类似于身份证号码， */
+
+
+        * {
+            color: red;
+        }
+
+        /* 通配符选择器定义：   * {  属性：属性值；}  表示为选取页面所有元素。 */
+    </style>
+</head>
+
+<body>
+    <div>男生</div>
+    <div>男生</div>
+    <div>男生</div>
+    <div id="pink">邓凯伦</div>
+    <p>女生</p>
+    <p>女生</p>
+    <p>女生</p>
+    <ul>
+        <li class="red">成都</li>
+        <li class="hehe font20">北京</li>
+        <li>仁寿</li>
+        <li>富家</li>
+    </ul>
+</body>
+
+</html>

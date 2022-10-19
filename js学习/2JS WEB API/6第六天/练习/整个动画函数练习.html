@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="but1">点击夏雨荷才走</button>
+    <button class="but2">点击夏雨荷才走</button>
+    <span>夏雨荷</span>
+    <script>
+        var span = document.querySelector('span');
+        var but1 = document.querySelector('.but1');
+        var but2 = document.querySelector('.but2');
+        function fn(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 20;
+                if (step > 0) {
+                    step = Math.ceil(step);
+                }
+                else {
+                    step = Math.floor(step);
+                }
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback();
+                    }
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 15)
+
+        }
+
+
+        but1.addEventListener('click', function (e) {
+            fn(span, 800, function () {
+                alert('回调函数测试');
+            });
+        })
+        but2.addEventListener('click', function (e) {
+            fn(span, 500)
+        })
+    </script>
+</body>
+
+</html>

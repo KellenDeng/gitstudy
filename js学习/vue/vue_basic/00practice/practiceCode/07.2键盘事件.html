@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>{{name}}</h2>
+        <input type="text" placeholder="请输入值" @keydown.huichejian="fun">
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        Vue.config.keyCodes.huichejian = 13;
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'dkl'
+            },
+            methods: {
+                fun(e) {
+                    console.log(e.target.value)
+                    console.log('你输入了值')
+                }
+            },
+        });
+    </script>
+</body>
+
+
+</html>

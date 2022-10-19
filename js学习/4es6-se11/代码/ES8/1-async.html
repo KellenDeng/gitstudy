@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async函数</title>
+</head>
+
+<body>
+    <script>
+        //async 函数     特殊函数 ，返回结果全都是一个promise对象
+        async function fn() {
+            // 1.返回一个字符串
+            // return '尚硅谷';
+            // 如果返回的结果不是一个 Promise 类型的对象, 则返回的结果就是成功resolved的 Promise 对象  返回值 就是return返回的值
+
+            //2.抛出错误, 返回的结果是一个失败的rejectd 的 Promise
+            // throw new Error('出错啦!');
+
+            //3.返回的结果如果是一个 Promise 对象  这种情况占主要    这个返回值和前面的then 返回值是一个promise对象 的结果值类似
+            return new Promise((resolve, reject) => {
+                resolve('成功的数据');
+                // reject("失败的错误");
+            });
+        }
+
+        const result = fn();
+        console.log(result);
+
+        //调用 then 方法
+        result.then(value => {
+            console.log(value);
+        }, reason => {
+            console.warn(reason);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>面试题_综合</title>
+</head>
+<body>
+<script type="text/javascript">
+  
+  /*
+  * 面试题:考察点：预解析、作用域、原型链、this指向、意外的全局变量、函数返回值。
+  * */
+  function Foo() {
+    getName = function () { console.log(1) };
+    return this;
+  }
+  Foo.getName = function () { console.log(2)};
+  Foo.prototype.getName = function () { console.log(3)};
+  var getName = function () { console.log(4)};
+  function getName() { console.log(5)}
+
+  //请写出以下输出结果：
+  Foo.getName();//2-----------------2
+  getName();//4---------------------4
+  Foo().getName();//3 4 5 1---------1
+  getName();//4---------------------1
+  new Foo.getName();//报错 2 3 1----2
+  new Foo().getName();// 2 3 4------3
+  new new Foo().getName();//4 报错--3
+  /*
+  * new始终找距离new最近的一个符合“断句”的函数
+  * */
+  
+</script>r
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>find方法</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		var ary = [{
+			id: 1,
+			name: '张三'
+		}, {
+			id: 2,
+			name: '李四'
+		}];
+		// let target = ary.find(item => item.id == 3);
+		// console.log(target)
+
+		//对比上下的不同的写法
+		let target = ary.find(function (a, b) {
+			return b == 1;
+		});
+		console.log(target);
+	</script>
+</body>
+
+</html>

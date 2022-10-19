@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  
+  //递归：自己调用自己,注意：递归前千万不要忘记写“让代码终结的条件”
+  
+  var a = 1
+  
+  function demo(b) {
+    console.log('demo的第一行')
+    b++
+    console.log(b)
+    if(b>6){
+      return
+    }
+    demo(b)
+    console.log('demo的最后一行')
+  }
+  demo(a)
+  
+  //in操作符：判断一个对象中是否有指定的属性，有则返回true  无则返回false
+  /*var p = {
+    name:'kobe',
+    age:18
+  }
+  
+  console.log( 'sex' in p )*/
+  
+  
+  
+</script>
+
+</body>
+</html>

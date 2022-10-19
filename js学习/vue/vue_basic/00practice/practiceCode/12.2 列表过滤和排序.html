@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>人物列表</h2>
+        <input v-model="keyWord" type="text" placeholder="请输入名字">
+        <button @click="sortindex=0">原顺序</button>
+        <button @click="sortindex=1">升序</button>
+        <button @click="sortindex=2">降序</button>
+        <li v-for="(p,index) of filpersons " :key="p.id">
+            {{p.name}}--{{p.age}}--{{p.sex}}
+        </li>
+
+
+    </div>
+    <script>
+        //用监听属性来做
+        // new Vue({
+        //     el: '#root',
+        //     data: {
+        //         keyWord: '',
+        //         persons: [
+        //             { id: '001', name: '马冬梅', age: 19, sex: '女' },
+        //             { id: '002', name: '周冬雨', age: 20, sex: '女' },
+        //             { id: '003', name: '周杰伦', age: 21, sex: '男' },
+        //             { id: '004', name: '温兆伦', age: 22, sex: '男' }
+        //         ],
+        //         filpersons: []
+        //     },
+        //     watch: {
+        //         keyWord: {
+        //             immediate: true,
+        //             handler(val) {
+        //                 this.filpersons = this.persons.filter((value) => {
+        //                     return value.name.includes(val) == true;
+        //                 })
+
+        //             }
+        //         }
+        //     }
+        // })
+
+        //用计算属性来做  过滤一般用这个方法
+        new Vue({
+            el: '#root',
+            data: {
+                keyWord: '',
+                sortindex: 0,
+                persons: [
+                    { id: '001', name: '马冬梅', age: 19, sex: '女' },
+                    { id: '002', name: '周冬雨', age: 20, sex: '女' },
+                    { id: '003', name: '周杰伦', age: 30, sex: '男' },
+                    { id: '004', name: '温兆伦', age: 22, sex: '男' }
+                ],
+
+            },
+            computed: {
+                filpersons() {
+                    const arr = this.persons.filter((value) => {
+                        return value.name.includes(this.keyWord) == true;
+                    });
+
+                    if (this.sortindex) {
+                        arr.sort((p1, p2) => {
+                            return this.sortindex === 1 ? p1.age - p2.age : p2.age - p1.age;
+                        })
+
+                    }
+                    return arr;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

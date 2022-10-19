@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器</title>
+</head>
+
+<body>
+    <script>
+        //生成器其实就是一个特殊的函数      
+        //异步编程  纯回调函数  node fs  ajax mongodb
+        //函数代码的分隔符    
+        function* gen() {
+            console.log(111);
+            yield '一只没有耳朵';
+            console.log(222);
+            yield '一只没有尾部';
+            console.log(333);
+            yield '真奇怪';
+            console.log(444);
+        }
+        //创建一个迭代器
+        let iterator = gen();  //为什么要写一个变量 接收这个函数？ 目的：创建一个迭代器 iterator
+        let a = gen();  //创建一个迭代器 a   这是两个单独存在的迭代器
+        // console.log(gen);
+        console.log(gen());      //说明是一个迭代器对象  方法里面含有symbol.iterator 也就含有next()
+        console.log(a);
+        console.log('============');
+        console.log(gen().next());   //想想为什么不能这么写 ?
+        console.log(gen().next());
+        // console.log(gen().next());
+        console.log('============');
+        console.log(a.next());
+        console.log(a.next());
+        console.log(a.next());
+        console.log('============');
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log('============');
+        //遍历  这里把gen()换成a和 iterator 不行  因为这两个迭代器已经迭代完成了
+        for (let v of gen()) {
+            console.log(v);
+        }
+
+    </script>
+</body>
+
+</html>

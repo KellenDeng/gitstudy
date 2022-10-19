@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+
+<body>
+    <script>
+        //声明一个数组
+        //使用 for...of 遍历数组   for  of  可以自动遍历带有[Symbol.iterator]函数的数据结构，比如数组，Set，Map。
+        // （包括 Array，Map，Set，String，TypedArray，arguments 对象等等）
+        // for(let v of xiyou){
+        //     console.log(v);
+        // }
+        const xiyou = ['唐僧', '孙悟空', '猪八戒', '沙僧'];
+        console.log(xiyou);
+        let iterator = xiyou[Symbol.iterator]();  // [Symbol.iterator]()调用这个迭代器接口  这句代码意思是部署迭代器
+        console.log(iterator);
+
+        //调用迭代器对象的next方法
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+    </script>
+</body>
+
+</html>

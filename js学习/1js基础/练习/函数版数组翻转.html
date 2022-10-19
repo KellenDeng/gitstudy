@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getarr2(arr1) {
+            var arr2 = [];
+            for (var i = 0; i <= arr1.length - 1; i++) {
+                arr2[arr1.length - 1 - i] = arr1[i];
+
+            }
+            return arr2;
+        }
+        var arr1 = ['pink', 'blue', 'green'];
+        var arr2 = getarr2(arr1);
+        console.log(arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

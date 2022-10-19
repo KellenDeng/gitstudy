@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <ul>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+
+    </ul>
+    <ol id="a">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+
+    </ol>
+    <script>
+
+        //打印  生僻字的li
+        /*  方法一：
+         var haha = document.getElementById('a');
+         console.log(haha);
+         var b = haha.getElementsByTagName('li');
+         console.log(b); */
+
+
+        var hi = document.getElementsByTagName('ol');
+        console.log(hi);
+        var ha = hi[0].getElementsByTagName('li');
+        console.log(ha);
+    </script>
+</body>
+
+</html>

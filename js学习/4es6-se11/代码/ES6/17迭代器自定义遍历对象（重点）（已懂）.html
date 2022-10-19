@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义遍历数据</title>
+</head>
+
+<body>
+    <script>
+        //  这整个代码是告诉你  自定义一个next()里面是怎么实现的！！！！ 
+        //  对象天生是不带默认的Symblo.iterator接口的 所以自己定义了一个，就需要写遍历器是怎样生成的函数
+        //声明一个对象
+        const banji = {
+            name: "终极一班",
+            stus: [
+                'xiaoming',
+                'xiaoning',
+                'xiaotian',
+                'knight'
+            ],
+            //[Symbol.iterator]() 是banji对象里面的自定义的一个方法 也是 遍历器入口  for of 会自动找到这儿来
+            //对象里面没有[Symbol.iterator]()    for of 就不会生效的 因为对象 是天生不带Symbol.iterator  需要自己定义一个
+            //这里用了  对象方法的简写!!!
+            [Symbol.iterator]() {
+                // 用let 定义的变量  每一个{}中的变量都是独立的
+                let index = 0;
+
+                let _this = this;
+                console.log(index);
+                console.log(this)
+                return {
+                    next: function () {       //next  是一个方法
+                        if (index < _this.stus.length) {
+                            const result = { value: _this.stus[index], done: false };
+                            //下标自增
+                            index++;
+                            //返回结果
+
+                            return result;
+                        } else {
+                            return { value: undefined, done: true };
+                        }
+                    }
+                };
+
+            }
+
+        }
+        //调用 [Symbol.iterator]  这个方法  不要加 . 
+        let iterator = banji[Symbol.iterator]();
+        console.log(iterator);
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        //遍历这个对象
+        for (let v of banji) {
+            console.log(v);
+        }
+
+    </script>
+</body>
+
+</html>

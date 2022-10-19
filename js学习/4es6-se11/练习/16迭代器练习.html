@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var it = makeIterator(['a', 'b']);
+        // 这里是自己写了一个迭代器来用   而不是用了系统默认写好的迭代器 
+        //这里的调用 类似于 之前pink老师讲的出租车案例的调用
+        console.log(it.next());// { value: "a", done: false }     
+        console.log(it.next()); // { value: "b", done: false }
+        console.log(it.next());// { value: undefined, done: true }
+
+
+        // 实际开发中 我们一般在对象中 需要自己写一个自定义的迭代器  
+        // 一般其他数据结构内部自带迭代器函数  只需要我们调用即可
+
+        //迭代器生成函数   告诉我们迭代器是内部是怎么实现的  返回的是一个对象
+        function makeIterator(array) {
+            var nextIndex = 0;
+            return {
+                next: function () {
+                    return nextIndex < array.length ?
+                        { value: array[nextIndex++], done: false } :
+                        { value: undefined, done: true };
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

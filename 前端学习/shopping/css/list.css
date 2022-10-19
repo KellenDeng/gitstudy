@@ -1,0 +1,62 @@
+  .miaosha {
+      position: absolute;
+      top: 42px;
+      left: 186px;
+      padding-left: 16px;
+      border-left: 1px solid #b3181c;
+  }
+
+  .head-1 {
+      display: flex;
+      height: 47px;
+      border-bottom: 1px solid red;
+  }
+
+  .head-1 .head-11 {
+
+      height: 47px;
+      width: 360px;
+      /* background-color: pink; */
+  }
+
+  .head-1 .head-12 {
+      height: 47px;
+      width: 840px;
+      /* background-color: blue; */
+
+  }
+
+  .head-1 ul {
+      display: flex;
+      justify-content: space-around;
+  }
+
+  .head-1 ul li {
+      margin-top: 18px;
+      font-size: 16px;
+  }
+
+  .head-11 ul li a {
+      font-weight: 700;
+      color: black;
+  }
+
+  .head2 .head21 {
+      height: 120px;
+  }
+
+  .head2 .head22 ul {
+      display: flex;
+      justify-content: space-around;
+
+      flex-wrap: wrap;
+
+  }
+
+  .head2 .head22 ul li {
+      border: 1px solid transparent;
+  }
+
+  .head2 .head22 ul li:hover {
+      border: 1px solid red;
+  }

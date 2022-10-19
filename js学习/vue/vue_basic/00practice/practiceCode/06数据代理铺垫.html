@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+        let number = 18;
+        let person = {
+            name: 'dkl',
+            sex: 'man'
+        };
+        Object.defineProperty(person, 'age', {
+            // value: 30,
+            // enumerable: true,
+            // writable: true,
+            //下面是两种不同的写法
+            get: function pig() {
+                console.log('读取了age');
+                return number;
+            },
+            set(value) {
+                console.log('修改了age');
+                number = value;
+            }
+        })
+        console.log(Object.keys(person));
+        console.log(person);  //这是 打印出来 并不是读取
+
+
+    </script>
+</body>
+
+</html>

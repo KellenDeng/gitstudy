@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_作用域链</title>
+</head>
+<body>
+<!--
+1. 理解
+  * 由内向外的多个作用域形成的链
+  * 查找变量时就是沿着作用域链来查找的
+2. 查找一个变量的查找规则
+  * 在当前作用域查找, 如果有直接返回, 否则进入下一步
+  * 在上一级作用域查找, 如果有直接返回, 否则进入下一步
+  * 再次执行2的相同操作, 直到全局作用域, 如果还找不到就抛出找不到的异常
+-->
+<script type="text/javascript">
+  
+  //作用域与执行上下文
+  var a  = 1
+  function demo() {
+    var b = 2
+    function test() {
+      var c = 3
+      console.log(a,b,c)
+    }
+    test()
+  }
+  demo()
+  
+  /*function test1() {
+    var a = 100
+  }
+  
+  function test2() {
+    var b = 200
+    console.log(a,b)
+  }*/
+
+</script>
+</body>
+</html>

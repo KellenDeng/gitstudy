@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机号码： <input type="number"> <button>发送</button>
+    <script>
+        var input = document.querySelector('input');
+        var but = document.querySelector('button');
+        but.addEventListener('click', function () {
+            if (input.value == '') {
+                alert('请输入手机号');
+            } else {
+                but.disabled = true;
+                var time = 5
+                but.innerHTML = '请' + time + '秒后再发送';
+                var timer = setInterval(function () {
+                    time--;
+                    but.innerHTML = '请' + time + '秒后再发送';
+                    if (time == 0) {
+                        but.innerHTML = '发送';
+                        but.disabled = false;
+                        clearInterval(timer);
+                    }
+                }, 1000);
+            }
+        });        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function daojishi(inputtime) {
+            var time1 = Date.now();
+            var time2 = (inputtime - time1) / 1000;
+            var day = parseInt(time2 / 60 / 60 / 24);
+            day = day > 10 ? day : '0' + day;
+            var h = parseInt(time2 / 60 / 60 % 24);
+            h = h > 10 ? h : '0' + h;
+            var min = parseInt(time2 / 60 % 60);
+            min = min > 10 ? min : '0' + min;
+            var s = parseInt(time2 % 60);
+            return day + '天' + h + '时' + min + '分' + s + '秒';
+        }
+
+        var date = new Date('2022-6-15 21:10:00');
+        var a = date.getTime();
+        console.log(daojishi(a));
+             //多写几遍
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

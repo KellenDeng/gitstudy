@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animatepractice.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .c-nav {
+        width: 900px;
+        height: 42px;
+        background: #fff url(../07-筋斗云导航栏/images/rss.png) no-repeat right center;
+        margin: 100px auto;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .c-nav ul {
+        position: absolute;
+    }
+
+    .c-nav li {
+        float: left;
+        width: 83px;
+        text-align: center;
+        line-height: 42px;
+    }
+
+    .c-nav li a {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+        height: 42px;
+    }
+
+    .c-nav li a:hover {
+        color: white;
+    }
+
+    .cloud {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 83px;
+        height: 42px;
+        background: url(../07-筋斗云导航栏/images/cloud.gif) no-repeat;
+    }
+</style>
+
+<body>
+    <div id="c_nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">我是佩奇</a></li>
+            <li><a href="#">啥是佩奇</a></li>
+        </ul>
+    </div>
+    <script>
+        cloud = document.querySelector('.cloud');
+        ul = document.querySelector('ul');
+        var c_nav = document.querySelector('.c_nav');
+        // console.log(ul.children.length);
+        var current = 0;
+        for (i = 0; i < ul.children.length; i++) {
+            ul.children[i].addEventListener('mouseover', function () {
+                animatepractice(cloud, this.offsetLeft);
+            })
+            ul.children[i].addEventListener('mouseout', function () {
+                animatepractice(cloud, current);
+            });
+            ul.children[i].addEventListener('click', function () {
+                animatepractice(cloud, this.offsetLeft);
+                current = this.offsetLeft;  //想想为什么不能用i*li的宽度代替
+            })
+        }
+
+    </script>
+</body>
+
+</html>

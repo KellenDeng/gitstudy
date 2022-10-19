@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1000px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            position: relative;
+            height: 300px;
+            width: 500px;
+            margin: 100px auto;
+            background: pink;
+            transform-style: preserve-3d;
+            animation: rotate 10s linear infinite;
+
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+
+        }
+
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            /* transform也和css的其他元素一样会有层叠性，后面的会把前面的覆盖掉。 */
+            /* 这里没有搞懂：为什么先移动x，y后，再移动z 位置发生变化了 */
+            width: 300px;
+            height: 200px;
+            background: url(../images/dog.jpg);
+        }
+
+        section div:nth-child(1) {
+            transform: rotateY(0) translateZ(300px) translate(-50%, -50%);
+            ;
+        }
+
+        /* 这里的translateZ把前面的translate(-50%, -50%);覆盖掉了，
+            意思就是没有执行前面的transform: translate(-50%, -50%);这行代码了。*/
+
+        section div:nth-child(2) {
+            transform: translate(-50%, -50%) rotateY(60deg) translateZ(300px);
+
+        }
+
+        /* ！！！后面的位移，旋转位置放错，实现效果不一样，重点理解 */
+        section div:nth-child(3) {
+            transform: translate(-50%, -50%) rotateY(120deg) translateZ(300px);
+
+        }
+
+        section div:nth-child(4) {
+            transform: translate(-50%, -50%)rotateY(180deg) translateZ(300px);
+
+        }
+
+        section div:nth-child(5) {
+            transform: translate(-50%, -50%) rotateY(240deg) translateZ(300px);
+
+        }
+
+        section div:nth-child(6) {
+            transform: translate(-50%, -50%) rotateY(300deg) translateZ(300px);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

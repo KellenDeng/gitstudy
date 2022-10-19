@@ -1,0 +1,193 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.mod-start {
+    display: flex;
+    height: 455px;
+    margin-top: 5px;
+}
+
+.focus1 {
+    margin-left: 215px;
+    margin-right: 10px;
+}
+
+div .news-head {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #666;
+    border-bottom: transparent;
+    line-height: 40px;
+}
+
+div .news-head h2 {
+    margin-left: 10px;
+}
+
+div .news-head a {
+    margin-right: 10px;
+}
+
+div .news {
+    width: 250px;
+    border: 1px solid #666;
+    margin-top: -1px;
+}
+
+div .news ul li {
+    margin-left: 10px;
+    padding: 5px 0;
+    font-size: 12px;
+    /* 1.这个单词的意思是如果文字显示不开也必须强制一行内显示 */
+    white-space: nowrap;
+    /* 2.溢出的部分隐藏起来 */
+    overflow: hidden;
+    /* 3. 文字溢出的时候用省略号来显示 */
+    text-overflow: ellipsis;
+}
+
+div .huafei {
+    border-right: 1px solid #666;
+    width: 250px;
+    overflow: hidden;
+}
+
+div .huafei ul {
+    display: flex;
+    width: 251px;
+    /* background-color: pink; */
+    flex-wrap: wrap;
+    border-left: 1px solid #666;
+}
+
+div .huafei ul li {
+    width: 62.5px;
+    height: 65px;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    text-align: center;
+
+}
+
+div .huafei ul li i {
+    display: inline-block;
+    /* i 是行类元素 */
+    width: 25px;
+    height: 30px;
+    /* text-align: center; */
+    margin-top: 12px;
+    background: url(../images/icons.png) -16px -15px;
+}
+
+/* div .huafei ul li p {
+    text-align: center;
+    padding-top: 40px;
+       p是块级元素，不能加text-align: center;
+} */
+
+.downpic img {
+    padding-top: 4px;
+}
+
+.daycommend {
+    height: 163px;
+    /* background-color: pink; */
+    margin-top: 10px;
+}
+
+.daycommend ul {
+    display: flex;
+}
+
+.daycommend ul li:first-child {
+    padding: 30px 60px;
+    background-color: #5c5251;
+}
+
+.nav-two {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 2px solid red;
+    /* background-color: pink; */
+    margin-top: 15px;
+}
+
+.nav-two p {
+    line-height: 40px;
+}
+
+.nav-two ul {
+    display: flex;
+
+}
+
+.nav-two ul li a {
+    display: inline-block;
+    margin: 10px 10px;
+
+}
+
+.jiadan {
+    display: flex;
+    height: 360px;
+    /* background-color: pink; */
+}
+
+.cost11 ul {
+    display: flex;
+    width: 270px;
+    flex-wrap: wrap;
+}
+
+.cost11 ul li {
+    width: 115px;
+    text-align: center;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    height: 40px;
+    margin: 0 10px;
+    line-height: 40px;
+}
+
+.cost12 {
+    width: 289px;
+
+}
+
+.cost12 img {
+    margin-left: 35px;
+    margin-top: 13px;
+}
+
+.cost2 {
+    width: 300px;
+    height: 360px;
+}
+
+.cost2 img {
+    width: 300px;
+    height: 360px;
+}
+
+.cost3,
+.cost4 {
+    border-right: 1px solid rgb(204, 204, 204);
+    width: 219px;
+    height: 360px;
+}
+
+.cost3 img,
+.cost4 img,
+.cost5 img {
+    width: 217px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+
+}
+
+div .cost32 {
+    border-bottom: transparent;
+}

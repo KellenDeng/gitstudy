@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 444px;
+            height: 320px;
+        }
+
+        div {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            margin: 30px auto;
+
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            /* 脱离标准流。盒子浮到标准流上面 */
+            top: 0;
+            left: 0;
+            margin: 0;
+            background: rgba(0, 0, 0, .4) url(../images/arr1.png) no-repeat center;
+
+        }
+
+        .todo:hover .mask {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo">
+        <img src="../images/tudou.jpg" alt="">
+        <!-- !图片会占有位置,会挤占标准流模块！！！ -->
+        <div class="mask"></div>
+    </div>
+</body>
+
+</html>

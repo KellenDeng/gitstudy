@@ -1,0 +1,105 @@
+  body {
+      min-width: 320px;
+      max-width: 750px;
+      width: 10rem;
+      margin: 0 auto;
+      line-height: 1.5;
+      font-family: Arial, Helvetica;
+      background: #f2f2f2;
+
+  }
+
+  /* !!这行代码不写的话，高{html里面的字体大小}会一直随着视口变化而变化（js里面写的程序是这样执行的）。写了这行代码，
+  !!视口变大到一定大小后，宽高{html里面的字体大小}都不会变化 */
+  @media screen and (min-width:750px) {
+      html {
+          font-size: 75px !important;
+      }
+  }
+
+  a {
+      text-decoration: none;
+      font-size: .3333rem;
+  }
+
+  img {
+      vertical-align: middle;
+  }
+
+  /* 首页头制作 */
+  .search-content {
+      display: flex;
+      position: fixed;
+      width: 10rem;
+      align-items: center;
+      height: 1.1733rem;
+      background-color: #FFC001;
+
+  }
+
+  .searchright {
+      position: absolute;
+      right: .2667rem;
+      color: white;
+
+  }
+
+  .search-content input {
+      flex: 1;
+      margin-right: 1.2rem;
+      margin-left: .2667rem;
+      height: .88rem;
+      border-radius: .5333rem;
+      font-size: .4rem;
+      color: #757575;
+      padding-left: .5333rem;
+      border: transparent;
+      background-color: #FFF2CC;
+      outline: none;
+  }
+
+  .searchleft {
+      width: .5867rem;
+      height: .9333rem;
+      background: url(../images/classify.png) no-repeat;
+      /* background-size: 100%; */
+      background-size: .5867rem .9333rem;
+      margin-left: .2667rem;
+  }
+
+  /* 广告模式制作 */
+  .ad {
+      display: flex;
+  }
+
+  .ad a {
+      flex: 1;
+  }
+
+  .ad a img {
+      width: 100%;
+  }
+
+  /* nav模块的制作 */
+  .nav {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: .2667rem;
+
+  }
+
+  .nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 2rem;
+      height: 1.8667rem;
+
+  }
+
+  .nav a img {
+      display: block;
+      width: 1.0933rem;
+      height: 1.0933rem;
+
+  }

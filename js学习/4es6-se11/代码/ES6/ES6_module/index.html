@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 模块化</title>
+</head>
+
+<body>
+    <script type="module">
+        //js文件暴露出去和引用过来的都是对象形式的！！！！！！！
+        //1. 通用的导入方式
+        //引入 m1.js 模块内容
+        // as后面的 m1  m2  m3  代表的是一个别名  也可以用其他字符表示 
+        //         用 m1 m2 m3  只是方便的知道引用出自哪儿
+        import * as m1 from "./src/js/m1.js";
+        //引入的是对象形式的
+        console.log(m1);
+        console.log(m1.school);
+        console.log(m1.teach);
+        m1.teach()
+        // //引入 m2.js 模块内容
+        import * as m2 from "./src/js/m2.js";
+        console.log(m2);
+        console.log(m2.school);
+        m2.findJob()
+        // 引入 m3.js
+        import * as m3 from "./src/js/m3.js";
+        console.log(m3);
+        console.log(m3.default.school);
+        m3.default.change();
+        console.log('================================');
+
+        //!!2.  ！！！！重点 ：解构赋值形式引入 统一暴露 和 分别暴露 
+        //这样就可以直接使用  school 和 teach  这两个变量了 不用在前面加  m1.
+        import { school, teach } from "./src/js/m1.js";
+        console.log(school);
+        teach();
+        //as guigu  可以采用别名 名字叫guigu  但是实际开发过程中，不会采用别名
+        import { school as guigu, findJob } from "./src/js/m2.js";
+        console.log(guigu);
+        findJob();
+        //固定写法
+        // as m3  采用别名  名字叫kk   default 的引入 必须起一个别名
+        import { default as kk } from "./src/js/m3.js";
+        console.log(kk);
+        kk.change();
+
+
+        //3.重点！！！ 简便形式  针对默认暴露!!   zz 只是一个字符！！！！ 别名
+        import zz from "./src/js/m3.js";
+        console.log(zz);
+        zz.change();
+    </script>
+
+    <!-- 下面的引入方式是 先将许多js文件引入一个大的js文件 再把大的js文件引入过来 -->
+    <!-- <script src="./src/js/app.js" type="module"></script> -->
+</body>
+
+</html>

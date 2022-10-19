@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_原型(prototype)</title>
+</head>
+<body>
+<!--
+1. 函数的prototype属性(图)
+  * 每个函数都有一个prototype属性, 它默认指向一个Object空对象(即称为: 原型对象)
+  * 原型对象中有一个属性constructor, 它指向该函数对象（函数本身）
+2. 给原型对象添加属性(一般都是方法)
+  * 作用: 函数的实例对象可以“找到(沿着实例对象身上的__proto__去找)”其构造函数原型中的属性(方法)
+-->
+<script type="text/javascript">
+  
+  function Demo() {
+    this.haha = 123
+  }
+  
+  console.log(Demo.prototype,Demo.prototype instanceof Object) //demo的原型对象，1:Object对象，2：空对象
+  console.log(Demo.prototype.constructor === Demo)
+  console.log(Date.prototype)//Date函数的原型对象
+  var d = new Date()
+
+  //一般向原型对象上追的都是方法
+  Demo.prototype.test1 = function () {
+    console.log('我是demo函数原型上的test1')
+  }
+  //一般不会向原型对象上追加属性
+  Demo.prototype.test2 = '哈哈'
+  Demo.prototype.test3 = true
+  
+  var demo = new Demo()
+  console.log(demo)
+  demo.test1()
+  console.log(demo.test2);
+  console.log(demo.test3);
+
+
+  //空对象？没有编码人员定义的属性的对象，就是空对象
+  var a = {} //
+  var b ={m:1}
+  
+  //js中如何判断一个对象是否为空？
+  if(JSON.stringify(demo.prototype) === '{}'){
+    //console.log(1)
+  }
+  
+
+</script>
+</body>
+</html>

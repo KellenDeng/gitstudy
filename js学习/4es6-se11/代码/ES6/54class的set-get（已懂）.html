@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get 和 set</title>
+</head>
+
+<body>
+    <script>
+        // get 和 set  
+        class Phone {
+            //price  为属性 不是方法  get的作用是是给属性绑定一个函数  执行属性 就会执行函数里面的代码，
+            //返回值就会赋值给原属性 price
+            get price() {
+                console.log("价格属性被读取了");
+                return 'iloveyou';
+            }
+            //  set的作用和get  类似  只是set是 price被赋值时，就会执行函数里面的代码     
+            set price(newVal) {
+                console.log('价格属性被修改了');
+            }
+        }
+
+        //实例化对象
+        let s = new Phone();
+
+        // console.log(s.price);
+        s.price = 'free';
+    </script>
+</body>
+
+</html>

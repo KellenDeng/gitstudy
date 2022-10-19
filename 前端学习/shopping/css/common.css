@@ -1,0 +1,295 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?tomleg');
+    src: url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+        url('../fonts/icomoon.woff?tomleg') format('woff'),
+        url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.style-red {
+    color: red;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.shortcut {
+    height: 31px;
+    background-color: #f1f1f1;
+    line-height: 31px;
+}
+
+.shortcut ul li {
+    float: left;
+
+}
+
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0px;
+
+
+}
+
+.arrow-icon::after {
+    content: "\e91e";
+    font-family: 'icomoon';
+    margin-left: 6px;
+}
+
+.head {
+    position: relative;
+    /* background-color: pink; */
+    height: 105px;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    /* background-color: blue; */
+}
+
+header .logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background-image: url(../images/logo.png);
+    /* 这里用设置a的背景图，而不设置其他的盒子的，是因为点击图片返回首页 */
+    font-size: 0;
+    /* 文字隐藏 */
+}
+
+header .search {
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+header .search input {
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+
+}
+
+header .search button {
+    float: right;
+    height: 32px;
+    width: 80px;
+    background-color: #b1191a;
+    color: #fff;
+}
+
+.hotwords {
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+
+.hotwords a {
+    margin: 0 10px;
+    /* padding: 0 10px; */
+}
+
+.shopcar {
+    position: absolute;
+    top: 25px;
+    right: 60px;
+    width: 140px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #f7f7f7;
+    border: 1px solid #dfdfdf;
+}
+
+.shopcar::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    color: red;
+    margin-right: 5px;
+}
+
+.shopcar::after {
+    content: '\e920';
+    font-family: 'icomoon';
+    margin-left: 5px;
+
+}
+
+.shopcar .count {
+    position: absolute;
+    top: -5px;
+    left: 90px;
+    background-color: #b1191a;
+    height: 14px;
+    line-height: 14px;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
+}
+
+.nav {
+    height: 45px;
+    border-bottom: 2px solid red;
+}
+
+.nav .w {
+    display: flex;
+}
+
+.nav .w .dropdown {
+    height: 45px;
+    width: 210px;
+    background-color: red;
+}
+
+.nav .w .dropdown .dt {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    line-height: 45px;
+}
+
+.nav .w .dropdown .dd {
+    /* display: none; */
+    /* position: relative; */
+    margin-top: 1px;
+    background-color: red;
+
+}
+
+.nav .w .dropdown .dd ul li {
+    position: relative;
+    background-color: red;
+    color: #fff;
+    height: 30.5px;
+    margin-left: 2px;
+
+}
+
+.nav .w .dropdown .dd ul li:hover {
+    background: #fff;
+    color: red;
+}
+
+.nav .w .dropdown .dd ul li:hover a {
+    color: red;
+}
+
+.nav .w .dropdown .dd ul li a {
+    color: #fff;
+    margin-left: 10px;
+    line-height: 31px;
+    font-size: 14px;
+}
+
+.nav .w .dropdown .dd ul li::after {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    content: '\e920';
+    font-family: 'icomoon';
+}
+
+.navitems {
+    /* background-color: blue; */
+    width: 990px;
+}
+
+.navitems ul {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.navitems ul li {
+
+    height: 31px;
+    margin-top: 5px;
+}
+
+.navitems ul li a {
+    line-height: 31px;
+    padding: 0 15px;
+    font-size: 15px;
+}
+
+.mod-service {
+    margin-top: 20px;
+    /* background-color: blue; */
+    border-bottom: 1px solid rgb(92, 91, 91);
+    padding-bottom: 35px;
+}
+
+.mod-service ul {
+    display: flex;
+    justify-content: space-around;
+    /* background-color: blue; */
+}
+
+.mod-service ul li {
+    width: 150px;
+}
+
+.mod-service ul li .service-pic {
+    float: left;
+    height: 50px;
+    width: 55px;
+    background: url(../images/icons.png) no-repeat -253px -3px;
+    /* 这里用了精灵图 */
+}
+
+.mod-help {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(63, 63, 63);
+    margin-top: 20px;
+    padding-bottom: 35px;
+}
+
+.mod-help dt {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mod-help dl:last-child {
+    text-align: center;
+}
+
+.mod-copyright {
+    padding-top: 20px;
+}
+
+.links {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 15px;
+}

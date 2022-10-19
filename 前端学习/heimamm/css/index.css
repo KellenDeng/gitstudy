@@ -1,0 +1,247 @@
+body {
+    max-width: 750px;
+    min-width: 320px;
+    margin: 0 auto;
+    /* height: 3000px; */
+    background-color: #F2F4F7;
+}
+
+@media screen and (min-width:750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header 的制作 */
+header {
+    padding-top: .6667rem;
+    height: 2.1333rem;
+    text-align: center;
+    border-bottom: 1px solid #F2F4F7;
+    font-size: .88rem;
+    background-color: #FFFFFF;
+}
+
+.warp {
+    margin-top: .0267rem;
+    background-color: #FFFFFF;
+    margin-bottom: .2667rem;
+}
+
+/* nav 的制作 */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 13.92rem;
+
+}
+
+.nav a {
+
+    flex: 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-left: 1.7867rem; */
+
+}
+
+.nav a:nth-child(-n+3) {
+    padding-bottom: 2.0533rem;
+    padding-top: 1.36rem;
+}
+
+.nav a img {
+    width: 3.7067rem;
+    height: 3.7067rem;
+
+}
+
+.nav a span {
+    display: inline-block;
+    width: 3.7067rem;
+    margin-top: .4267rem;
+    text-align: center;
+    font-size: .6667rem;
+}
+
+/* ad 的制作 */
+.ad {
+    padding-bottom: 1.12rem;
+    border-bottom: 1px solid #F2F4F7;
+}
+
+.ad img {
+    width: 19.2533rem;
+    height: 4.0533rem;
+    padding-left: .48rem;
+    margin-top: 1.6rem
+}
+
+/* 就业指导模块 */
+.work {
+    height: 15.3333rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    /* 清除内外盒子垂直方向 外边距合并 */
+
+}
+
+.work-1 {
+    display: flex;
+    justify-content: space-between;
+    height: 1.0133rem;
+    margin-top: 1.0667rem;
+    background-color: #FFFFFF;
+}
+
+.work-1 a {
+    line-height: 1.0133rem;
+}
+
+.work-1 a:nth-child(1) {
+    margin-left: .5867rem;
+    font-size: .7467rem;
+    color: #333333;
+}
+
+.work-1 a:nth-child(1)::before {
+    content: '';
+    display: inline-block;
+    height: .9867rem;
+    width: .9867rem;
+    background: url(../icon/i2.png) no-repeat;
+    background-size: .9867rem .9867rem;
+    vertical-align: middle;
+    margin-right: .48rem;
+}
+
+.work-1 a:nth-child(2) {
+    font-size: .5867rem;
+    margin-right: .64rem;
+    color: #999999;
+}
+
+/* 轮播图模块 */
+.swiper-container {
+    /* width: 100%; */
+    height: 100%;
+    width: 14.4rem;
+}
+
+.job-focus {
+    position: relative;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    margin-top: .9067rem;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    transition: 300ms;
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.swiper-slide a {
+    width: 9.0133rem;
+    height: 10.0267rem;
+}
+
+.swiper-slide p {
+    width: 9.0133rem;
+    font-size: .6667rem;
+    margin-top: .64rem;
+}
+
+.swiper-slide a img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 当前选中的图片 */
+.swiper-slide-active,
+.swiper-slide-duplicate-active {
+    transform: scale(1);
+    z-index: 999;
+    opacity: 1;
+}
+
+/* .study模块 */
+.study {
+    height: 12.9867rem;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    overflow: hidden;
+    /* 清除内外盒子垂直方向 外边距合并 */
+}
+
+.study .work-1 a:nth-child(1)::before {
+    content: '';
+    display: inline-block;
+    height: .9867rem;
+    width: .9867rem;
+    background: url(../icon/i1.png) no-repeat;
+    background-size: .9867rem .9867rem;
+    vertical-align: middle;
+    margin-right: .48rem;
+}
+
+/* footer 模块 */
+.footer {
+    position: fixed;
+    /* !!固定定位不占位置！！ */
+    /* left: 0; */
+    bottom: 0;
+    /* !!当不写bottom: ;时，固定定位以父级位置为准，且不占有盒子的位置！！，所以用鼠标滚轮下滑看不到，必缩小才能看到 */
+    /* !不写方位名词{top，right等}时,固定定位非常类似于浮动！！！，会以压住的盒子元素为准。 */
+    /* !写了方位名词后，会以屏幕（可视窗口）为准， */
+    height: 3.0133rem;
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    background-color: #fff;
+    margin-top: 2px;
+    z-index: 999;
+    display: flex;
+
+}
+
+.footer a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .5333rem;
+}
+
+.footer a img {
+    width: 1.04rem;
+    height: 1.0933rem;
+}
+
+.footer a p {
+    font-size: .5867rem;
+    color: #666666;
+    margin-top: .2667rem;
+}

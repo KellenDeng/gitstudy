@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .black {
+            background-color: black;
+        }
+
+        .pink {
+            background-color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button> 开关灯</button>
+    <script>
+        var but = document.querySelector('button');
+        var body = document.body;
+        var flog = 0;
+        but.onclick = function () {
+            if (flog == 0) {
+                body.className = 'black';
+
+                flog = 1;
+            } else {
+                body.className = 'white';
+                flog = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

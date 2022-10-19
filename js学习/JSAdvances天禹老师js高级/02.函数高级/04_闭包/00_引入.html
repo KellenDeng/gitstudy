@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>00_引入</title>
+</head>
+<body>
+
+<button>按钮0</button>
+<button>按钮1</button>
+<button>按钮2</button>
+<!--
+需求: 点击某个按钮, 提示"点击的是第n个按钮"
+-->
+<script type="text/javascript">
+  //以下代码有问题
+  /*var btns = document.getElementsByTagName('button')
+  for (var i=0; i<btns.length; i++ ){
+    btns[i].onclick = function () {
+      alert(i)
+    }
+  }*/
+
+  //缓存计数器方式解决
+ /* var btns = document.getElementsByTagName('button')
+  for (var i=0; i<btns.length; i++ ){
+    btns[i].index = i
+    btns[i].onclick = function () {
+      alert(this.index)
+    }
+  }*/
+  
+  //使用闭包解决
+  /*var btns = document.getElementsByTagName('button')
+  for (var i=0; i<btns.length; i++ ){
+    (function (i) {
+      btns[i].onclick = function () {
+        alert(i)
+      }
+    })(i)
+  }
+  console.log(i)*/
+  
+  //let关键字(构建了块级作用域)
+  /*var btns = document.getElementsByTagName('button')
+  for (let i=0; i<btns.length; i++ ){
+    btns[i].onclick = function () {
+      alert(i)
+    }
+  }*/
+  
+  
+
+</script>
+</body>
+</html>

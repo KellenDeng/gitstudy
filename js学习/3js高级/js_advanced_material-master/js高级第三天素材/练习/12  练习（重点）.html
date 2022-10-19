@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>榴莲</li>
+        <li>臭豆腐</li>
+        <li>鲱鱼罐头</li>
+        <li>猪蹄</li>
+    </ul>
+    <script>
+        var lis = document.querySelectorAll('li');
+        // lis.forEach(function (value, index) {
+        //     value.addEventListener('click', function () {
+        //         console.log(index);  //注意  这里不要写成了this.index
+        //     });
+        // });
+
+        lis.forEach(function (value, index) {
+            (function () {
+                value.onclick = function () {
+                    console.log(index);
+                }
+            })();
+
+        });
+
+    </script>
+</body>
+
+</html>

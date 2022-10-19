@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<style>
+    * {
+        margin-top: 20px;
+    }
+
+    .demo1 {
+        padding: 5px;
+        height: 100px;
+        width: 200px;
+        background-color: palevioletred;
+    }
+
+    .demo2 {
+        height: 50px;
+
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <div id="root">
+        <h3>你好，{{name}}</h3>
+        <button v-on:click="fun1">点我打开1</button>
+        <button @click="fun2($event,66)">点我打开2</button>
+
+
+        <div @click="fun1" class="demo1">
+            <div @click.stop="getfun2" class="demo2">
+                <!-- vue的修饰符可以像下面那样连写 -->
+                <a @click.prevent.stop="getfun1" href="http://www.baidu.com"> 打开{{address}}</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                name: '邓凯伦',
+                address: '知乎'
+            },
+            methods: {
+                fun1(e) {
+                    alert('你好哇');
+                },
+                fun2(e, a) {
+                    alert(a);
+
+                },
+
+
+                getfun1() {
+                    alert('阻止你')
+                },
+                getfun2() {
+                    alert('点击了2')
+                }
+            }
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

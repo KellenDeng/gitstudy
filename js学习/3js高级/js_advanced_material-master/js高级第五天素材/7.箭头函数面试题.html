@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数面试题</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+
+		var age = 100;
+
+		var obj = { 		//具体对象不能产生作用域的
+			age: 20,
+			say: () => {      //say 方法实际定义在全局作用域下的
+				alert(this.age)  //这里的this指向window
+			}
+		}
+
+		obj.say();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*    var day = new Date();//  注意大小写
+           console.log(day);
+           var day1 = new Date(2018, 5, 20);
+           console.log(day1);
+           var day2 = new Date('2017-5-21 7:2:5');
+           console.log(day2); */
+
+        //    得到当前的年月日
+        /*    var day = new Date();
+           console.log(day);
+           console.log(day.getFullYear());
+           console.log(day.getMonth() + 1);
+   
+           var year = day.getFullYear();
+           var month = day.getMonth() + 1;
+           var day5 = day.getDate();
+           var week = day.getDay();
+           var arr1 = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+           console.log(year + '年 ' + month + '月 ' + day5 + '日 ' + arr1[week]); */
+
+        //    得到当前的时间 的函数！！！！
+        function gettime1() {
+            var date1 = new Date();
+            var time1 = date1.getHours();
+            var time2 = date1.getMinutes();
+            var time3 = date1.getSeconds();
+            var h = time1 >= 10 ? time1 : '0' + time1;
+            var m = time2 >= 10 ? time2 : '0' + time2;
+            var s = time3 >= 10 ? time3 : '0' + time3;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(gettime1());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

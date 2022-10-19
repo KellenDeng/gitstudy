@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 浅拷贝只是拷贝一层, 更深层次对象级别的只拷贝引用（意思就是更深层的对象只是类似的拷贝了地址）.
+        // 深拷贝拷贝多层, 每一级别的数据都会拷贝.
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            }
+        };
+        var o = {};
+        // for (var k in obj) {
+        //     // k 是属性名,得到的是字符串   obj[k] 属性值
+        //     o[k] = obj[k];    //仔细理解这句话  o[k] 是对象引用属性的另一种方法   o['id']和o.id 一样 
+        // }
+        // console.log(o);
+        // o.msg.age = 20;
+        // console.log(obj);
+
+        console.log('--------------');
+        Object.assign(o, obj);
+        console.log(o);
+        o.msg.age = 20;
+        console.log(obj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_作用域与执行上下文</title>
+</head>
+<body>
+<!--
+1. 区别1
+  * 全局作用域之外，每个函数都会创建自己的作用域，作用域在函数定义时就已经确定了。而不是在函数调用时
+  * 全局执行上下文环境是在全局作用域确定之后, js代码在真正执行之前创建
+  * 函数执行上下文环境是在调用函数时, 函数体代码执行之前创建
+2. 区别2
+  * 作用域是静态的, 只要函数定义好了就一直存在, 且不会再变化
+  * 上下文环境是动态的, 调用函数时创建, 函数调用结束时上下文环境就会被释放
+3. 联系
+  * 作用域是从属于其所在的执行上下文环境的
+  * 全局上下文环境==>全局作用域
+  * 函数上下文环境==>对应的函数使用域
+-->
+<script type="text/javascript">
+  
+  /*function demo1() {
+    var a = 1
+    console.log(this)
+    console.log(a,b)
+    function demo2() {
+      var b = 2
+      console.log(a,b)
+    }
+    demo2()
+  }
+  demo1()*/
+
+  /*
+ 问题:
+ 1. 有几个作用域?  ---- 1+n  1是window，n定义函数的个数    4个作用域
+ 2. 产生过几个上下文? ---- 1+n  1是window,n调用函数的次数  4个
+ 3. 最终有几个上下文对象? ------ 1个 是window
+ */
+  
+  //不是面试题
+  /*var a = 10,
+      b = 20
+  
+  function fn(x) {
+    var a = 100,
+    c = 300;
+    console.log('fn()', a, b, c, x)
+    function bar(x) {
+      var a = 1000,
+      d = 400
+      console.log('bar()', a, b, c, d, x)
+    }
+    bar(100)
+    bar(200)
+  }
+  fn(10)
+  
+  function demo(a,b) {
+    var c = 2
+    var d = a + b + c
+  }*/
+  
+  //如果变量不用var声明，直接写 b = 2 导致b上升到全局
+  function demo() {
+    var a = 1
+    b = 2
+  }
+  demo()
+  console.log(b)
+
+</script>
+</body>
+</html>

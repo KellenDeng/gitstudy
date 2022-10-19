@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getmin(arr) {
+            for (var j = 1; j <= arr.length - 1; j++) {
+                for (var i = 0; i <= arr.length - 1 - j; i++) {
+                    if (arr[i] > arr[i + 1]) {
+                        var a = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = a;
+                    }
+                }
+
+            }
+            return arr;
+        }
+        var arr1 = [4, 5, 7, 2, 44, 55, 33, 25, 67];
+        console.log(getmin(arr1));
+
+    </script>
+</body>
+
+</html>

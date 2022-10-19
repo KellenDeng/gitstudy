@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tbt {
+            position: relative;
+            /* 如果没有这个代码，下面的margin代码不会执行，想想为什么 （这里图片的宽度为520px）*/
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+
+        .left,
+        .right {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background: rgba(0, 0, 0, .3);
+            /* 这里为什么不执行代码,注意代码的权重性啊！ */
+        }
+
+        .left {
+            left: 0px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .right {
+            right: 0px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            line-height: 30px;
+            padding-left: 4px;
+            color: #fff;
+        }
+
+        .dayuan {
+            /* 这是flex布局 */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* float: left; */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background: rgba(255, 255, 255, .3);
+            border-radius: 5px;
+        }
+
+        /* .dayuan li {
+            float: left;
+            background: #fff;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            margin: 3px 4px;
+        } 这是用浮动来布局*/
+
+        .dayuan .one {
+            background: orange;
+        }
+
+        .dayuan li {
+            background: #fff;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div class="tbt">
+    <img src="../images/tb.jpg" alt="">
+    <!-- !注意：图片首先会挤占绝对定位盒子的位置(如果绝对定位盒子不设定top left bottom right 其中的值的话)，图片会占有位置,会挤占标准流模块！！！ -->
+    <span class="left"><a href="#">&lt;</a></span>
+    <span class="right"><a href="#">&gt;</a></span>
+    <ul class="dayuan">
+        <li class="one"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+
+</html>

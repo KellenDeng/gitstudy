@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>06_面试题</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  
+  //面试题1
+  var A = function() {
+
+  }
+  A.prototype.n = 1
+
+  var b = new A()
+
+  A.prototype = {
+    n: 2,
+    m: 3
+  }
+
+  var c = new A()
+  
+  console.log(b.n, b.m, c.n, c.m)
+  
+  //面试题2
+  /*var F = function(){
+  
+  };
+  Object.prototype.a = function(){
+    console.log('a()')
+  };
+  Function.prototype.b = function(){
+    console.log('b()')
+  };
+  
+  var f = new F();*/
+  //f.a()//a()
+  //f.b()//报错
+  //F.a()//a()
+  //F.b()//b()
+  
+  /*var arr = [1,2,3,4,5]
+  var obj = {m:1,n:2}
+  
+  console.log(arr.toString())
+  console.log(obj.toString())
+  
+  
+  console.log(arr.toString());
+  console.log(Object.prototype.toString.call(arr));
+*/
+
+</script>
+</body>
+</html>

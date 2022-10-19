@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 借用父构造函数继承属性
+        // 1. 父构造函数
+        function Father(uname, age) {
+            // this 指向父构造函数的对象实例
+            this.uname1 = uname;
+            this.age1 = age;
+        }
+        // 2 .子构造函数 
+        function Son(uname3, age3, score3) {
+            // this 指向子构造函数的对象实例
+            Father.call(this, uname3, age3);  //this 为什么不能修改为Son 为什么改为Son 输出就全错了
+            console.log(this);         //这里的this不能用 a 来代替
+            this.score1 = score3;
+        }
+
+        var a = new Son('刘德华', 18, 100);
+        console.log(a);      //重点理解a和Son的关系  创建的a 存放的Son设置的其中一个对象   
+                              //Son是一个 自定义的对象大类    属于在Object范围里
+    </script>
+</body>
+
+</html>

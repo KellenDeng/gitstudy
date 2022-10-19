@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/dayjs.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h3>{{time1()}} </h3>
+        <h2>{{time2}}</h2>
+        <h1>{{time | time3('YYYY/MM/DD') }}</h1>
+        <h4>{{time | time3('YYYY/MM/DD') | time4 }}</h4>
+    </div>
+    <script>
+        Vue.filter('time4', function (value) {
+            return value.slice(0, 4)
+        })
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                time: 1621561377603,
+                name: '你好'
+            },
+            methods: {
+                time1() {
+                    return dayjs(this.time).format('YYYY/MM/DD hh:mm:ss')
+                }
+            },
+            computed: {
+                time2() {
+                    return dayjs(this.time).format('YYYY/MM/DD hh:mm:ss')
+                }
+            },
+            filters: {
+                time3(value, str = 'YYYY/MM/DD hh:mm:ss') {
+                    return dayjs(value,).format(str)
+                },
+
+
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

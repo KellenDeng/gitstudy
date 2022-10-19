@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+
+</head>
+
+
+<body>
+    <div id="root">
+        <h3>遍历数组</h3>
+        <ul>
+            <li v-for=" p of persons" :key="p.id">
+                {{p.name}}-{{p.age}}
+            </li>
+            <li v-for="(value,index) of cars" :key='index'>
+                {{index}}-{{value}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                persons: [
+                    { id: 01, name: '邓凯伦', age: 18 },
+                    { id: 02, name: '赵誉', age: 19 },
+                    { id: 03, name: '刘德华', age: 20 },
+                    { id: 4, name: '周杰', age: 50 }
+                ],
+                cars: {
+                    name: 'aodi',
+                    price: '70w',
+                    color: 'black'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

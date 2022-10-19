@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.allSettled</title>
+</head>
+
+<body>
+    <script>
+        //Promise.allSettled  接受一个promise的数组   返回的结果也是一个promise的对象 返回的结果永远是一个成功的状态
+        //      返回结果的promise对象的  promiseResult值 是一个数组 ,数组的每一个元素是一个对象,
+        //      对象里面包含的是接受的promise对象的 状态 和里面的值
+        //声明两个promise对象
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品数据 - 1');
+                // reject('我出错啦!!!!');
+            }, 1000)
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品数据 - 2');
+                // reject('出错啦!');
+            }, 1000)
+        });
+
+        //调用 allsettled 方法
+        const result = Promise.allSettled([p1, p2]);
+        console.log(result);
+        //all  返回的结果也是一个promise对象  返回的结果 promise全部成功，才是成功的状态  否则是失败
+        //  all  如果接受的数组都是 成功,   promiseResult值 是一个数组 里面存有 接受的promise 成功的值
+        //  如果 接收的数组有一个 是失败的  则promiseResult值  里面存的 接受的promise 第一个失败的值
+        const res = Promise.all([p1, p2]);
+
+        console.log(res);
+
+    </script>
+</body>
+
+</html>

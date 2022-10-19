@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可选链操作符</title>
+</head>
+
+<body>
+    <script>
+        // ?.  可选链操作符   
+        //
+        function main(config) {
+            //一步一步的找到host  不这样写   如果db里面没有host 就会报错
+            const dbHost1 = config && config.db && config.db.host;
+            //  .?  判断前面的 值有没有传入   简化了上面的写法  去掉了层层判断
+            const dbHost = config?.db?.host;
+
+            console.log(dbHost);
+        }
+
+        main({
+            db: {
+                host: '192.168.1.100',
+                username: 'root'
+            },
+            cache: {
+                host: '192.168.1.200',
+                username: 'admin'
+            }
+        })
+    </script>
+</body>
+
+</html>

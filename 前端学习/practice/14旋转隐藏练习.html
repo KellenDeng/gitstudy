@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            overflow: hidden;
+            /* 关键的代码部分 */
+            /* position: relative; */
+            height: 200px;
+            width: 200px;
+            margin: 100px auto;
+            /* background: red; */
+            border: 1px solid red;
+            transform-origin: 50px 50px;
+            transition: all 1s;
+        }
+
+        div::before {
+            display: block;
+            content: "练习 ";
+            height: 200px;
+            width: 200px;
+            background: pink;
+            transform-origin: bottom left;
+            transform: rotate(90deg);
+            transition: all .7s;
+
+        }
+
+        div:hover::before {
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

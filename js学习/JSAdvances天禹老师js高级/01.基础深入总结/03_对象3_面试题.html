@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_对象3_面试题</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  
+  //面试题
+  var obj1 = {m:1,n:2} // '[object Object]'
+  var obj2 = {m:3,n:4}// '[object Object]'
+  var obj3 = {} // '[object Object]'
+  
+  var a = {}
+  
+  //a.obj1 = 1
+  //a.obj2 = 2
+  //console.log(a) // {obj1:1,obj2:2}
+
+  a[obj1] = 1
+  a[obj2] = 2
+  a[obj3] = 3
+  
+  console.log(a[obj1] === a[obj2]) // true
+  console.log(a[obj1]) //3
+  console.log(a[obj2]) //3
+  //console.log(a) //
+  
+  //面试题（变种）
+  var arr = [2,4,6,8]
+  var arr2 = [1,3,5,7]
+  var a = {}
+  
+  a[arr] = 1    // {'[2,4,6,8]':1}
+  a[arr2] = 2   // {'[2,4,6,8]':1,'[1,3,5,7]':2}
+  a.arr = 3     //{'[2,4,6,8]':1,'[1,3,5,7]':2,arr:3}
+  a['arr'] = 6  //{'[2,4,6,8]':1,'[1,3,5,7]':2,arr:6}
+  
+  console.log(a[arr])
+  console.log(a['arr']) // 此种写法等价于： console.log(a.arr)
+  console.log(a[arr] === a[arr2]) //此种写法等价于：a['[2,4,6,8]'] === a['[1,3,5,7]']  即： 1 === 2
+ 
+  //一般对象调用toString和数组调用toString的区别
+  /*var obj1 = {m:1,n:2}
+  var obj2 = {}
+  var obj3 = {m:1,n:2,l:3,k:9}
+  
+  console.log(obj1.toString())
+  console.log(obj2.toString())
+  console.log(obj3.toString())
+   //将一个对象转换成字符串，要求是：依然能体现出对象里的内容
+   //console.log(JSON.)
+   
+  var arr = [2,4,6,8]
+  var z = arr.toString()
+  console.log(z)*/
+  
+  //JSON上的两个常用方法（回忆）
+  /*var w = {m:100,n:200}
+  var str = '{"name":"kobe","age":18}'
+  var g = JSON.stringify(w)
+  var g2 = JSON.parse(str)
+  console.log(g,typeof g)
+  console.log(g2,typeof g2)*/
+
+</script>
+</body>
+</html>

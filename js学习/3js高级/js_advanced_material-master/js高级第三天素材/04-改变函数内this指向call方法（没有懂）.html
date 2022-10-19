@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 改变函数内this指向  js提供了三种方法  call()  apply()  bind()
+
+        // 1. call()
+        var o = {
+            name: 'andy'
+        }
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+
+        };
+        fn.call(o, 1, 2);
+        // call 第一个可以调用函数 第二个可以改变函数内的this 指向
+        // call 的主要作用可以实现继承
+        function Father(uname, age, sex) {
+            this.uname1 = uname;
+            this.age1 = age;
+            this.sex1 = sex;
+        }
+
+        function Son(uname2, age2, sex2) {
+            Father.call(this, uname2, age2, sex2);
+            console.log(this);
+        }
+        var a = new Son('刘德华', 18, '男');
+        console.log(a);     //重点理解a和Son的关系  创建的a 存放的Son设置的其中一个对象   
+        //Son是一个 自定义的对象大类    属于在Object范围里
+        console.log(typeof Father);
+        console.log(typeof a);
+    </script>
+</body>
+
+</html>

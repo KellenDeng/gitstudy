@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 表单域，提示信息，表单控件 -->
+  <form action=url地址"" method="提交方式" name="自定义名字">
+    <!-- name:用于给表单的名字，以区分同一个页面中的多个表单域。 -->
+    用户名:<input type="type" name="username" value="请输入用户名" maxlength="10"> <br> <!-- input为单标签 ，为表单控件，-->
+    <!-- type="type"表示可以输入任何文字。 -->
+    <!-- type：表示可以输入文字的类型 -->
+
+    密码:<input type="password" name="pwd"> <br> <!-- type后面的password表示密码框。 -->
+
+    性别： 男<input type="radio" name="sex" value="男"> 女<input type="radio" name="sex" value="女"> <br>
+    <!--  radio  单选按钮 ,多选一-->
+    <!-- name用户自定义名字，1，方便后台知道用户选择了什么，告诉后台返回回来的值是什么意思。2，在raido栏加上name才能实现多选一。
+        单选radio和多选checkbox按钮都必须分别有相同的name值。 -->
+    <!--  value 定义表单里面的值，在网页可以看到，也可以看不到 ，便于后台知道选择了什么。 -->
+    <!-- 单选按钮和多选按钮，可以用checked属性，在网页打开之前，就已经默认选择了。 -->
+    <!-- !单选按钮和多选按钮，可以用checked属性,不是用在其他属性 -->
+    <!-- maxlength 表示最多输入几个值 -->
+    爱好： 吃饭 <input type="checkbox" name="habby"> 睡觉<input type="checkbox" name="habby"> 打球 <input type="checkbox"
+      name="habby" checked="checked">
+    <br>
+    <!-- checkbox 为复选框 ，可以多选-->
+
+    <input type="submit" value="注册"> <!-- submit  可以整个表单域form的数据提交给后台服务器 （后台服务器在form里面定义）-->
+    <input type="reset" value="重置按钮"> <!-- Reset可以把整个表单域设置为初始状态。 -->
+    <input type="button" value="普通按钮"> <!--  可以用来发送短信验证码 -->
+    <input type="file" value="文件选择"> <!-- 文件上传按钮 -->
+  </form> <!-- form就是表单域标签 -->
+
+
+</body>
+
+</html>

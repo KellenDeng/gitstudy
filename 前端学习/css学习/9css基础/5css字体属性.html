@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-family: "宋体", "Microsoft yahei";
+            /* 字体显示设置 */
+            color: blue;
+
+        }
+
+        /* 多个字体，兼容性会提高，第一个字体无法显示，就是用第二个，以此类推，都不行，会用浏览器自带的。多个字体时，用英文逗号隔开。
+          字体是多个单词组成时，用双引号或者单引号括起来。 */
+        body {
+
+            font-size: 20px;
+            /* 标题标签（h）比较特殊，需要单独指定大小。 一般先给body标签一个单独的字体大小，
+            设置网页整体的文字大小。。 font-size  ：字体大小设置。*/
+        }
+
+        .border {
+            font-weight: bold;
+            /* 字体粗细大小设置。 */
+        }
+
+        .bord {
+            font-weight: 700;
+            /*  实际开发中，一般用数字。700就相当于bolder*/
+        }
+
+        h2 {
+
+            font-size: 50px;
+            font-weight: 400;
+            /* 400和normal是一意思，表示正常粗细的字体。 */
+            font-style: italic;
+            /* 设置文字倾斜 */
+        }
+
+        .font123 {
+            /* font: font-style font-weight font-size/line-height font-family; */
+            font: italic 700 80px "Microsoft yahei";
+        }
+
+        /* 字体复合属性写法，以及注意小细节   S W S L F。 */
+        /* !!!!!!!使用 font 属性时，必须按上面语法格式中的顺序书写， 不能更换顺序， 并且各个属性间以空格隔开
+ 不需要设置的属性可以省略（取默认值），但必须保留 font-size 和 font-family 属性， 否则 font 属性将不起作用 */
+    </style>
+</head>
+
+<body>
+    <h2>邓凯伦赵誉</h2>
+    <p class="font123">邓凯伦赵誉</p>
+    <p>邓凯伦</p>
+    <p class="border">邓凯伦</p>
+    <p class="bord">邓凯伦</p>
+    <p>邓凯伦</p>
+</body>
+
+</html>

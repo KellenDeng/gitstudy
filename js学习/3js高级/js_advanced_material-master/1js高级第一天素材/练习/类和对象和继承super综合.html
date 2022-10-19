@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Star {
+            constructor(name, age) {
+
+                this.hername = name;
+                this.herage = age;
+
+            }
+            sing(b) {
+                // console.log('我会唱歌！');
+                console.log('我会唱' + b + '');
+            }
+
+        }
+        class son extends Star {
+            // singaa(b) {
+
+            //     super.sing(b);
+            // }
+            // 想想这三行代代码的含义。
+        }
+
+        var dkl = new Star('邓凯伦', 23);
+        var zy = new Star('赵誉', 22);
+        console.log(dkl);
+        console.log(zy);
+        dkl.sing('绅士');
+        var xiaomi = new son('小米', 2);
+        console.log(xiaomi);
+        // xiaomi.singaa('喵喵叫');
+        xiaomi.sing('喵喵叫');
+
+    </script>
+</body>
+
+</html>
