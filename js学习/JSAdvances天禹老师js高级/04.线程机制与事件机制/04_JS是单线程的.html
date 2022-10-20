@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>04_JS是单线程的</title>
 </head>
+
 <body>
-<!--
-1. 如何证明js执行是单线程的?
+  <!--
+1. 如何证明js执行是单线程的?   看看  面试题需要
   * setTimeout()的回调函数是在主线程执行的
   * 定时器回调函数只有在运行栈中的代码全部执行完后才有可能执行
   
@@ -19,27 +21,28 @@
   * 初始化代码
   * 回调代码
 -->
-<script type="text/javascript">
+  <script type="text/javascript">
 
-  /*
-  1. 先执行初始化代码
-  2. 后执行回调代码
-   */
+    /*
+    1. 先执行初始化代码
+    2. 后执行回调代码
+     */
 
-  setTimeout(function () {
-    console.log(1)
-  },1000)
-  setTimeout(function () {
-    console.log(2)
-  },2000)
-  setTimeout(function () {
-    console.log(3)
-  },3000)
+    setTimeout(function () {
+      console.log(1)
+    }, 1000)
+    setTimeout(function () {
+      console.log(2)
+    }, 2000)
+    setTimeout(function () {
+      console.log(3)
+    }, 3000)
 
-  console.log('alert之前')
-  alert('-------')
-  console.log('alert之后')
+    console.log('alert之前')
+    alert('-------')
+    console.log('alert之后')
 
-</script>
+  </script>
 </body>
+
 </html>
